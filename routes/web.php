@@ -4,6 +4,7 @@ use Livewire\Volt\Volt;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\productController;
 use App\Http\Controllers\ProductCategoryController;
 
 
@@ -22,7 +23,7 @@ Route::group(['prefix'=>'dashboard'], function(){
     Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
     Route::resource('categories',ProductCategoryController::class);
-    Route::get('products',[DashboardController::class,'products'])->name('products');
+    Route::resource('products',productController::class);
 
 })->middleware(['auth', 'verified']);
 
@@ -34,5 +35,6 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/password', 'settings.password')->name('settings.password');
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
+
 
 require __DIR__.'/auth.php';
