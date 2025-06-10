@@ -18,6 +18,8 @@
                     <flux:navlist.item icon="clipboard-document-list" :href="route('categories.index')" :current="request()->routeIs('categories.index')" wire:navigate>{{ __('Categories') }}</flux:navlist.item>
 
                     <flux:navlist.item icon="list-bullet" :href="route('products.index')" :current="request()->routeIs('products.index')" wire:navigate>{{ __('Products') }}</flux:navlist.item>
+                    <flux:navlist.item icon="users" :href="route('themes.index')" :current="request()->routeIs('themes.index')" wire:navigate>{{ __('themes') }}</flux:navlist.item>
+                    <flux:navlist.item icon="users" :href="route('menus.index')" :current="request()->routeIs('menus.index')" wire:navigate>{{ __('menus') }}</flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
             
